@@ -1,0 +1,192 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 2026-10-05 10:40:08
+Description: Rendering screen
+
+java.lang.IllegalStateException: Missing element ResourceKey[minecraft:item / examplemod:example_block]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.core.HolderGetter.lambda$getOrThrow$0(HolderGetter.java:12) ~[forge-26.1-62.0.9.jar%230!/:?]
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.core.HolderGetter.getOrThrow(HolderGetter.java:12) ~[forge-26.1-62.0.9.jar%230!/:?]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.core.component.DataComponentInitializers.lambda$createInitializerForRegistry$0(DataComponentInitializers.java:70) ~[forge-26.1-62.0.9.jar%230!/:?]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430) ~[?:?]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.core.component.DataComponentInitializers.createInitializerForRegistry(DataComponentInitializers.java:69) ~[forge-26.1-62.0.9.jar%230!/:?]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.core.component.DataComponentInitializers.lambda$build$2(DataComponentInitializers.java:58) ~[forge-26.1-62.0.9.jar%230!/:?]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214) ~[?:?]
+	at java.base/java.util.HashMap$ValueSpliterator.forEachRemaining(HashMap.java:1788) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560) ~[?:?]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:723) ~[?:?]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.core.component.DataComponentInitializers.build(DataComponentInitializers.java:59) ~[forge-26.1-62.0.9.jar%230!/:?]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.server.ReloadableServerResources.lambda$loadResources$1(ReloadableServerResources.java:92) ~[forge-26.1-62.0.9.jar%230!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019) ~[?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187) ~[?:?]
+Transformer Audit:
+  net.minecraft.core.HolderGetter
+    REASON: classloading
+  net.minecraft.core.component.DataComponentInitializers
+    REASON: classloading
+  net.minecraft.server.ReloadableServerResources
+    REASON: classloading
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Suspected Mods: NONE
+Stacktrace:
+	at TRANSFORMER/minecraft@26.1/net.minecraft.client.renderer.GameRenderer.extractGui(GameRenderer.java:524) ~[forge-26.1-62.0.9.jar%230!/:?]
+Transformer Audit:
+  net.minecraft.client.renderer.GameRenderer
+    REASON: classloading
+-- Screen render details --
+Details:
+	Screen name: net.minecraft.client.gui.screens.GenericMessageScreen
+	Mouse location: Scaled: (200.500000, 147.500000). Absolute: (401.000000, 295.000000)
+	Screen size: Scaled: (427, 240). Absolute: (854, 480). Scale factor of 2
+Stacktrace:
+	at TRANSFORMER/minecraft@26.1/net.minecraft.client.renderer.GameRenderer.extractGui(GameRenderer.java:524) ~[forge-26.1-62.0.9.jar%230!/:?]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.client.renderer.GameRenderer.extract(GameRenderer.java:431) ~[forge-26.1-62.0.9.jar%230!/:?]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.client.Minecraft.renderFrame(Minecraft.java:1365) [forge-26.1-62.0.9.jar%230!/:?]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.client.Minecraft.runTick(Minecraft.java:1321) [forge-26.1-62.0.9.jar%230!/:?]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.client.Minecraft.run(Minecraft.java:930) [forge-26.1-62.0.9.jar%230!/:?]
+	at TRANSFORMER/minecraft@26.1/net.minecraft.client.main.Main.main(Main.java:238) [forge-26.1-62.0.9.jar%230!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@26.1-62.0.9/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:96) [fmlloader-26.1-62.0.9.jar!/:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@26.1-62.0.9/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:79) [fmlloader-26.1-62.0.9.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:77) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:97) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:116) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.BootstrapEntry.main(BootstrapEntry.java:17) [modlauncher-10.2.4.jar!/:?]
+	at net.minecraftforge.bootstrap@2.1.7/net.minecraftforge.bootstrap.Bootstrap.moduleMain(Bootstrap.java:188) [bootstrap-2.1.8.jar!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at net.minecraftforge.bootstrap.Bootstrap.bootstrapMain(Bootstrap.java:133) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.launcher.Main$Launcher.run(Main.java:282) [slime-launcher-0.2.3.jar:0.2.3]
+	at net.minecraftforge.launcher.Main$Launcher.access$000(Main.java:268) [slime-launcher-0.2.3.jar:0.2.3]
+	at net.minecraftforge.launcher.Main.main(Main.java:57) [slime-launcher-0.2.3.jar:0.2.3]
+Transformer Audit:
+  net.minecraft.client.Minecraft
+    REASON: classloading
+    PLUGIN: accesstransformer:BEFORE
+  net.minecraft.client.main.Main
+    REASON: classloading
+  net.minecraft.client.renderer.GameRenderer
+    REASON: classloading
+
+
+-- Uptime --
+Details:
+	JVM uptime: 26.416s
+	Wall uptime: 18.485s
+	High-res time: 23.738s
+	Client ticks: 345 ticks / 17.250s
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla, mod_resources
+
+-- System Details --
+Details:
+	Minecraft Version: 26.1
+	Minecraft Version ID: 26.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 25.0.4.1, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 902204672 bytes (860 MiB) / 1409286144 bytes (1344 MiB) up to 8376025088 bytes (7988 MiB)
+	Memory (heap): init: 500MiB, used: 476MiB, committed: 1344MiB, max: 7988MiB
+	Memory (non-head): init: 007MiB, used: 190MiB, committed: 194MiB, max: 000MiB
+	CPUs: 16
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 7 7840HS w/ Radeon 780M Graphics     
+	Identifier: AuthenticAMD Family 25 Model 116 Stepping 1
+	Microarchitecture: Zen 3
+	Frequency (GHz): 3.79
+	Number of physical packages: 1
+	Number of physical CPUs: 8
+	Number of logical CPUs: 16
+	Graphics card #0 name: AMD Radeon(TM) 780M
+	Graphics card #0 vendor: Advanced Micro Devices, Inc.
+	Graphics card #0 VRAM (MiB): 512.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.11026.1
+	Graphics card #1 name: NVIDIA GeForce RTX 4060 Laptop GPU
+	Graphics card #1 vendor: NVIDIA
+	Graphics card #1 VRAM (MiB): 8188.00
+	Graphics card #1 deviceId: VideoController2
+	Graphics card #1 versionInfo: 32.0.15.9649
+	Memory slot #0 capacity (MiB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 5.60
+	Memory slot #0 type: DDR5
+	Memory slot #1 capacity (MiB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 5.60
+	Memory slot #1 type: DDR5
+	Virtual memory max (MiB): 55490.36
+	Virtual memory used (MiB): 25197.43
+	Swap memory total (MiB): 23552.00
+	Swap memory used (MiB): 129.98
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 390971.09, total: 975633.00
+	Space in storage for workdir (MiB): available: 390971.09, total: 975633.00
+	JVM Flags: 1 total; -XX:+UseCompactObjectHeaders
+	Debug Flags: 0 total; 
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.4.1+2
+	Backend API: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 596.49, NVIDIA Corporation
+	Window size: 854x480
+	GFLW Platform: win32
+	Render Extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access, GL_EXT_texture_filter_anisotropic
+	GL debug messages: 
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Universe: 400921fb54442d18
+	Type: Client
+	Transparency: regular
+	Render Distance: 16/16 chunks
+	Resource Packs: vanilla, mod_resources
+	Sound Cache: 48816 bytes in 1 buffers
+	Current Language: en_us
+	Locale: es_MX
+	System encoding: Cp1252
+	File encoding: UTF-8
+	CPU: 16x AMD Ryzen 7 7840HS w/ Radeon 780M Graphics 
+	ModLauncher: 10.2.4
+	ModLauncher launch target: forge_userdev_client
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/ slf4jfixer PLUGINSERVICE 
+		/ runtimedistcleaner PLUGINSERVICE 
+		/ runtime_enum_extender PLUGINSERVICE 
+		/ capability_token_subclass PLUGINSERVICE 
+		/ accesstransformer PLUGINSERVICE 
+		/ mixin PLUGINSERVICE 
+		/ fml TRANSFORMATIONSERVICE 
+		/ forge TRANSFORMATIONSERVICE 
+		/ mixin TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		lowcodefml@62
+		minecraft@1.0
+		javafml@62.0.9
+	Mod List: 
+		union:/C:/MyDevelopProjects/mods_minecraft/learnin|Minecraft                     |minecraft                     |26.1                |DONE      |Manifest: NOSIGNATURE
+		union:/C:/MyDevelopProjects/mods_minecraft/learnin|Forge                         |forge                         |62.0.9              |DONE      |Manifest: NOSIGNATURE
+		C:\MyDevelopProjects\mods_minecraft\learning-mod\b|Example Mod                   |examplemod                    |1.0.0               |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 0547e402-d9e7-43fc-9274-39ae711c88c3
+	FML: 62.0
+	Forge: net.minecraftforge:62.0.9
