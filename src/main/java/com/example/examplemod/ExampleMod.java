@@ -70,7 +70,8 @@ public final class ExampleMod {
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(EXAMPLE_ITEM.get());
+                output.accept(EXAMPLE_BLOCK_ITEM.get());// Add the example item to the tab. For your own tabs, this method is preferred over the event
             }).build());
 
     public ExampleMod(FMLJavaModLoadingContext context) {

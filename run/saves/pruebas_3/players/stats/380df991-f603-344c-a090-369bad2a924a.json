@@ -1,20 +1,27 @@
 {
   "stats": {
     "minecraft:custom": {
-      "minecraft:sprint_one_cm": 12488,
-      "minecraft:time_since_rest": 5559,
-      "minecraft:walk_one_cm": 15791,
-      "minecraft:total_world_time": 12785,
-      "minecraft:leave_game": 3,
-      "minecraft:fly_one_cm": 30470,
+      "minecraft:sprint_one_cm": 14456,
+      "minecraft:time_since_rest": 6487,
+      "minecraft:walk_one_cm": 17113,
+      "minecraft:total_world_time": 13813,
+      "minecraft:leave_game": 6,
+      "minecraft:fly_one_cm": 34633,
       "minecraft:sneak_time": 2,
-      "minecraft:play_time": 5559,
-      "minecraft:jump": 79,
-      "minecraft:time_since_death": 5559
+      "minecraft:play_time": 6487,
+      "minecraft:jump": 96,
+      "minecraft:time_since_death": 6487,
+      "minecraft:drop": 1
+    },
+    "minecraft:dropped": {
+      "examplemod:example_item": 1
     },
     "minecraft:used": {
-      "examplemod:example_block": 62,
-      "examplemod:example_item": 2
+      "examplemod:example_block": 64,
+      "examplemod:example_item": 3
+    },
+    "minecraft:picked_up": {
+      "examplemod:example_item": 1
     }
   },
   "DataVersion": 4786
