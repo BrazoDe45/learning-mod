@@ -24,11 +24,13 @@ public class ClientEvents {
     @SubscribeEvent
     public static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(MiPrimerEntidadModel.LAYER_LOCATION, MiPrimerEntidadModel::createBodyLayer);
+        event.registerLayerDefinition(QueenSlimeModel.LAYER_LOCATION, QueenSlimeModel::createBodyLayer);
     }
 
     // Enlaza cada mob con su renderizador.
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.MI_MOB.get(), MiMobRenderer::new);
+        event.registerEntityRenderer(ModEntities.QUEEN_SLIME.get(), QueenSlimeRenderer::new);
     }
 }
