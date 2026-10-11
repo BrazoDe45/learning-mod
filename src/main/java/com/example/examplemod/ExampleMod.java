@@ -39,6 +39,8 @@ public final class ExampleMod {
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
+
+
     // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block",
         () -> new Block(BlockBehaviour.Properties.of()
@@ -46,10 +48,21 @@ public final class ExampleMod {
             .mapColor(MapColor.STONE)
         )
     );
+    public static final RegistryObject<Block> Bloque_Nuevo = BLOCKS.register("bloque_nuevo",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .setId(BLOCKS.key("bloque_nuevo"))
+                    .mapColor(MapColor.STONE)
+            )
+    );
+
 
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block",
         () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties().setId(ITEMS.key("example_block")))
+    );
+
+    public static final RegistryObject<Item> BLOQUE_NUEVO_ITEM = ITEMS.register("bloque_nuevo",
+            () -> new BlockItem(Bloque_Nuevo.get(), new Item.Properties().setId(ITEMS.key("bloque_nuevo")))
     );
 
     // Creates a new food item with the id "examplemod:example_id", nutrition 1 and saturation 2
@@ -71,7 +84,8 @@ public final class ExampleMod {
             .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(EXAMPLE_ITEM.get());
-                output.accept(EXAMPLE_BLOCK_ITEM.get());// Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(EXAMPLE_BLOCK_ITEM.get());
+                output.accept(BLOQUE_NUEVO_ITEM.get());// Add the example item to the tab. For your own tabs, this method is preferred over the event
             }).build());
 
     public ExampleMod(FMLJavaModLoadingContext context) {
@@ -110,6 +124,7 @@ public final class ExampleMod {
     private static void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
             event.accept(EXAMPLE_BLOCK_ITEM);
+            event.accept(BLOQUE_NUEVO_ITEM);
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

@@ -1,0 +1,42 @@
+{
+  "stats": {
+    "minecraft:dropped": {
+      "examplemod:example_item": 1
+    },
+    "minecraft:crafted": {
+      "examplemod:bloque_nuevo": 4
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 26,
+      "minecraft:time_since_rest": 54232,
+      "minecraft:walk_one_cm": 104963,
+      "minecraft:leave_game": 30,
+      "minecraft:play_time": 84675,
+      "minecraft:jump": 233,
+      "minecraft:time_since_death": 54150,
+      "minecraft:drop": 1,
+      "minecraft:sprint_one_cm": 16138,
+      "minecraft:open_chest": 4,
+      "minecraft:total_world_time": 101396,
+      "minecraft:fly_one_cm": 62958,
+      "minecraft:crouch_one_cm": 755,
+      "minecraft:sneak_time": 151,
+      "minecraft:deaths": 1
+    },
+    "minecraft:picked_up": {
+      "examplemod:example_item": 1,
+      "examplemod:bloque_nuevo": 1,
+      "minecraft:stick": 65,
+      "minecraft:stone": 244,
+      "examplemod:example_block": 1,
+      "minecraft:chest": 1
+    },
+    "minecraft:used": {
+      "examplemod:example_block": 79,
+      "minecraft:chest": 1,
+      "examplemod:example_item": 4,
+      "examplemod:bloque_nuevo": 98
+    }
+  },
+  "DataVersion": 4786
+}

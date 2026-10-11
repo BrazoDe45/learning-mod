@@ -1,0 +1,14 @@
+/gamemode survival
+/gamemode creative
+/reload
+/give me minecraft:stone
+/reload
+/give @ex
+/give block minecraft:stone 5
+/give block examplemod:bloque_nuevo
+/kill
+/give block examplemod:bloque_nuevo 5 Dev
+/give block examplemod:bloque_nuevo 5
+/give Dev block examplemod:bloque_nuevo 5
+/give Dev examplemod:bloque_nuevo 5
+/reload

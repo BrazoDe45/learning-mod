@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    "D  ",
+    "  "
+  ],
+  "key": {
+    "D": "minecraft:diamond"
+
+  },
+  "result": {
+    "id": "examplemod:bloque_nuevo",
+    "count": 4
+  }
+}
+
