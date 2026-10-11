@@ -1,6 +1,7 @@
 package com.example.examplemod.registry;
 
 import com.example.examplemod.ExampleMod;
+import net.minecraft.core.RegistrySynchronization;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -20,6 +21,11 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.EXAMPLE_BLOCK.get(),
                     new Item.Properties().setId(ITEMS.key("example_block")))
     );
+
+    public static final RegistryObject<Item> CRAFT_BLOCK = ITEMS.register("craft_block",
+            () -> new BlockItem(ModBlocks.CRAFT_BLOCK.get(),
+    new Item.Properties().setId(ITEMS.key("craft_block")))
+            );
 
     // Ítem de comida de ejemplo.
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item",

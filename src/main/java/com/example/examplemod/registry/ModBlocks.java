@@ -22,6 +22,14 @@ public class ModBlocks {
             )
     );
 
+    // Bloque de ejemplo: "examplemod:example_block".
+    public static final RegistryObject<Block> CRAFT_BLOCK = BLOCKS.register("craft_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .setId(BLOCKS.key("craft_block"))
+                    .mapColor(MapColor.STONE)
+            )
+    );
+
     // Para añadir otro bloque, copia el bloque anterior con otro nombre,
     // y registra su BlockItem en ModItems.
 }

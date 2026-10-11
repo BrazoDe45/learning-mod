@@ -1,5 +1,6 @@
 {
   "item.examplemod.example_block": "Mi Bloque Genial",
   "item.examplemod.example_item": "Mi Ítem Genial",
-  "entity.examplemod.mi_mob": "Mi Mob"
+  "entity.examplemod.mi_mob": "Mi Mob",
+  "item.examplemod.craft_block:": "craft_block"
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    "D  ",
+    "D  "
+  ],
+  "key": {
+    "D": "minecraft:diamond"
+  },
+  "result": {
+    "id": "examplemod:craft_block",
+    "count": 4
+  }
+}
