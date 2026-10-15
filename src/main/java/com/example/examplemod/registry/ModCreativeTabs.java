@@ -20,15 +20,17 @@ public class ModCreativeTabs {
             () -> CreativeModeTab.builder()
                     .withTabsBefore(CreativeModeTabs.COMBAT)
                     .icon(() -> ModItems.EXAMPLE_ITEM.get().getDefaultInstance())
+                    .icon(() -> ModItems.TESTING_BUILDING_BLOCK_ITEM.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
+
                         // Todo lo que añadas aquí aparece dentro de tu pestaña.
                         output.accept(ModItems.EXAMPLE_ITEM.get());
-                        output.accept(ModItems.EXAMPLE_BLOCK_ITEM.get());
+                        output.accept(ModItems.TESTING_BUILDING_BLOCK_ITEM.get());
                     }).build());
 
     // Añade ítems a pestañas que ya existen en vanilla.
     public static void addToVanillaTabs(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(ModItems.EXAMPLE_BLOCK_ITEM);
+            event.accept(ModItems.TESTING_BUILDING_BLOCK_ITEM);
     }
 }

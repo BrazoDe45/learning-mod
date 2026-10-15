@@ -16,16 +16,10 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, ExampleMod.MODID);
 
-    // Ítem que coloca el bloque de ejemplo. Usa el mismo nombre que el bloque.
-    public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block",
-            () -> new BlockItem(ModBlocks.EXAMPLE_BLOCK.get(),
-                    new Item.Properties().setId(ITEMS.key("example_block")))
+    public static final RegistryObject<Item> TESTING_BUILDING_BLOCK_ITEM = ITEMS.register("testing_building_block",
+            () -> new BlockItem(ModBlocks.TESTING_BUILDING_BLOCK.get(),
+                    new Item.Properties().setId(ITEMS.key("testing_building_block")))
     );
-
-    public static final RegistryObject<Item> CRAFT_BLOCK = ITEMS.register("craft_block",
-            () -> new BlockItem(ModBlocks.CRAFT_BLOCK.get(),
-    new Item.Properties().setId(ITEMS.key("craft_block")))
-            );
 
     // Ítem de comida de ejemplo.
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item",

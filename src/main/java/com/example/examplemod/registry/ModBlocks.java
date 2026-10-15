@@ -14,22 +14,15 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, ExampleMod.MODID);
 
-    // Bloque de ejemplo: "examplemod:example_block".
-    public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .setId(BLOCKS.key("example_block"))
+    public static final RegistryObject<Block> TESTING_BUILDING_BLOCK = BLOCKS.register("testing_building_block",
+            () -> new Block(BlockBehaviour.Properties.of().setId(BLOCKS.key("testing_building_block"))
                     .mapColor(MapColor.STONE)
             )
     );
 
-    // Bloque de ejemplo: "examplemod:example_block".
-    public static final RegistryObject<Block> CRAFT_BLOCK = BLOCKS.register("craft_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .setId(BLOCKS.key("craft_block"))
-                    .mapColor(MapColor.STONE)
-            )
+    public static final RegistryObject<Block> TESTING_NATURAL_BLOCK = BLOCKS.register("testing_natural_block",
+            () -> new Block(BlockBehaviour.Properties.of().setId(BLOCKS.key("testing_natural_block"))
+                    .mapColor(MapColor.STONE))
     );
 
-    // Para añadir otro bloque, copia el bloque anterior con otro nombre,
-    // y registra su BlockItem en ModItems.
 }

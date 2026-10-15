@@ -1,5 +1,6 @@
 package com.example.examplemod.entity;
 
+//IMPORTS PARA EL FUNCIONAMIENTO DEL MOB
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -15,12 +16,9 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-// Mob hostil con comportamiento parecido al del zombi.
-// Extiende Monster: es hostil, desaparece en dificultad pacifica
-// y usa los sonidos y reglas de spawn de los monstruos.
-public class MiMob extends Monster {
+public class TestingMob extends Monster {
 
-    public MiMob(EntityType<? extends Monster> type, Level level) {
+    public TestingMob(EntityType<? extends Monster> type, Level level) {
         super(type, level);
     }
 
@@ -33,7 +31,7 @@ public class MiMob extends Monster {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 20.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.23)
-                .add(Attributes.ATTACK_DAMAGE, 3.0)
+                .add(Attributes.ATTACK_DAMAGE, 40.0)
                 .add(Attributes.FOLLOW_RANGE, 35.0);
     }
 
@@ -41,13 +39,13 @@ public class MiMob extends Monster {
     @Override
     protected void registerGoals() {
         // goalSelector: que hace el mob (comportamiento).
+                // gira la cabeza al azar
         this.goalSelector.addGoal(0, new FloatGoal(this));                              // flota en el agua en vez de hundirse
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0, false));            // ataca cuerpo a cuerpo (velocidad 1.0)
         this.goalSelector.addGoal(5, new MoveTowardsRestrictionGoal(this, 1.0));        // vuelve a su zona permitida si se aleja
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0));     // pasea al azar evitando el agua
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));   // mira al jugador cercano (hasta 8 bloques)
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));                   // gira la cabeza al azar
-
         // targetSelector: a quien elige como objetivo.
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));                                  // responde a quien le haga dano
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true)); // persigue al jugador mas cercano
