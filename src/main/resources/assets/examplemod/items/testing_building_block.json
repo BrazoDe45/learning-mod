@@ -1,0 +1,6 @@
+{
+  "model":{
+    "type":"minecraft:model",
+    "model": "examplemod:block/testing_building_block"
+  }
+}
