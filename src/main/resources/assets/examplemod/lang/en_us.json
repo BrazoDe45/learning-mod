@@ -1,4 +1,9 @@
 {
+<<<<<<< Updated upstream
   "item.examplemod.example_block": "Mi Bloque Genial",
   "item.examplemod.example_item": "Mi Ítem Genial"
+=======
+  "item.examplemod.bloquea": "BloqueA",
+  "creative_tab.examplemod.example_tab": "Block Test"
+>>>>>>> Stashed changes
 }
