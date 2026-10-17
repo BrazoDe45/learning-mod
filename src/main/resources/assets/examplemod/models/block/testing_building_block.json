@@ -29,50 +29,35 @@
         },
         "east": {
           "uv": [
-            4,
-            0,
-            8,
-            4
+          0,4,4,8
           ],
           "texture": "#tex",
           "cullface": "east"
         },
         "south": {
           "uv": [
-            8,
-            0,
-            12,
-            4
+          4,0,8,4
           ],
           "texture": "#tex",
           "cullface": "south"
         },
         "west": {
           "uv": [
-            0,
-            4,
-            4,
-            8
+            4,4,8,8
           ],
           "texture": "#tex",
           "cullface": "west"
         },
         "up": {
           "uv": [
-            4,
-            4,
-            8,
-            8
+            0,8,4,12
           ],
           "texture": "#tex",
           "cullface": "up"
         },
         "down": {
           "uv": [
-            0,
-            8,
-            4,
-            12
+            8,0,12,4
           ],
           "texture": "#tex",
           "cullface": "down"

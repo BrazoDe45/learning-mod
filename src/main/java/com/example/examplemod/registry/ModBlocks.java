@@ -1,6 +1,7 @@
 package com.example.examplemod.registry;
 
 import com.example.examplemod.ExampleMod;
+import com.example.examplemod.block.PoisonBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -24,5 +25,9 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of().setId(BLOCKS.key("testing_natural_block"))
                     .mapColor(MapColor.STONE))
     );
+
+    public static final RegistryObject<Block> TESTING_EFFECTS_BLOCK = BLOCKS.register("testing_effects_block",
+            () -> new PoisonBlock(BlockBehaviour.Properties.of().setId(BLOCKS.key("testing_efffects_block"))
+                .mapColor(MapColor.COLOR_RED)));
 
 }

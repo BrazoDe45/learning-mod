@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "examplemod:item/testing_poison_sword"
+  }
+}
