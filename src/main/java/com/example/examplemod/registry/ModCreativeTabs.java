@@ -24,9 +24,11 @@ public class ModCreativeTabs {
 
                         //Todo lo que añadas aquí aparece dentro de tu pestaña.
                         output.accept(ModItems.EXAMPLE_ITEM.get());
-                        output.accept(ModItems.TESTING_BUILDING_BLOCK_ITEM.get());
+                        output.accept(ModItems.TESTING_SIXFACES_BLOCK_ITEM.get());
+                        output.accept(ModItems.TESTING_ONEFACE_BLOCK_ITEM.get());
                         output.accept(ModItems.TESTING_EFFECTS_BLOCK_ITEM.get());
                         output.accept(ModItems.TESTING_POISON_SWORD.get());
+
                     }).build());
 
     // Añade ítems a pestañas que ya existen en vanilla.
