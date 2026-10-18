@@ -28,7 +28,10 @@ public class PoisonBlock extends Block {
 
     public PoisonBlock(BlockBehaviour.Properties properties) {
         super(properties);
+        int DURATION;
     }
+
+
 
     // Se ejecuta al colocar el bloque: programa la primera comprobación.
     // (Solo en el servidor; los ticks programados se guardan con el mundo.)
