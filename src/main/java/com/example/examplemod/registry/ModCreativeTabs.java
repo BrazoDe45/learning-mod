@@ -28,6 +28,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.TESTING_ONEFACE_BLOCK_ITEM.get());
                         output.accept(ModItems.TESTING_EFFECTS_BLOCK_ITEM.get());
                         output.accept(ModItems.TESTING_POISON_SWORD.get());
+                        output.accept(ModItems.TEST_WEAPON.get());
 
                     }).build());
 

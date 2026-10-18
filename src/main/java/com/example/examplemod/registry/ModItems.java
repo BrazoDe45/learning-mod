@@ -10,6 +10,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.rmi.registry.Registry;
+
 // Aquí se registran TODOS los ítems del mod, incluidos los BlockItem
 // (el ítem que coloca cada bloque).
 public class ModItems {
@@ -38,7 +40,14 @@ public class ModItems {
     public static final RegistryObject<Item> TESTING_POISON_SWORD = ITEMS.register("testing_poison_sword",
             () -> new Poison_Sword(new Item.Properties()
                     .setId(ITEMS.key("testing_poison_sword"))
-                    .sword(ToolMaterial.IRON, 3.0F, -2.4F)));
+                    .sword(ToolMaterial.IRON, 3.0f, -2.4f))
+    );
+
+    public static final RegistryObject<Item> TEST_WEAPON = ITEMS.register("test_weapon",
+            ()-> new Poison_Sword(new Item.Properties()
+                    .setId(ITEMS.key("test_weapon"))
+                    .sword(ToolMaterial.IRON, 3.0f, -2.4f))
+    );
 
     //COMIDAS
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item",
